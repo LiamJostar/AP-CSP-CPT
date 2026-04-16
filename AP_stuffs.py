@@ -3,6 +3,7 @@ Loot_type = ["Primary Weapon", "Secondary Weapon", "Currency", "Armor"]
 Loot_pri = ["Sword", "Bow", "Axe", "Sythe"]
 Loot_sec = ["Shield", "Dagger", "Dart", "Chakram"]
 Loot_curr = ["Coins", "Gems", "Dark Dollars", "Tokens"]
+Curr_amt = ["1", "2", "3", "4", "5"]
 Loot_armor = ["Helm", "Chestpiece", "Greaves", "Boots"]
 Rare_Sword = ["Bronze Greatsword", "Bronze Shortsword", "Bronze Longsword", "Bronze Rapier"]
 Rare_Bow = ["Longbow", "Shortbow", "Strongbow", "Quickbow"]
@@ -20,6 +21,9 @@ Rarity = ["Rare", "Rare", "Rare", "Super rare", "Super rare", "Mythical"]
 Pri_roll = random.choice(Loot_pri)
 Rarity_roll = random.choice(Rarity)
 Loot_roll = random.choice(Loot_type)
+Curr_roll = random.choice(Loot_curr)
+Arm_roll = random.choice(Loot_armor)
+Num_roll = random.choice(Curr_amt)
 if Loot_roll == "Weapon":
     if Pri_roll == "Sword" and Rarity_roll == "Rare":
         print("You Got: ", random.choice(Rare_Sword))
@@ -45,5 +49,48 @@ if Loot_roll == "Weapon":
         print("Congratulations! You got: ", random.choice(Mythic_Axe))
     elif Pri_roll  == "Sythe" and Rarity_roll == "Mythic":
         print("Congratulations! You got: ", random.choice(Mythic_Sythe))
-
-
+elif Loot_roll == "Currency":
+    if Curr_roll == "Coins":
+        if Num_roll == "1":
+            print("You got 1 coin! ")
+        elif  Num_roll == "2":
+            print("You got 2 coins! ")
+        elif  Num_roll == "3":
+            print("You got 3 coins! ")
+        elif  Num_roll == "4":
+            print("You got 4 coins! ")
+        elif  Num_roll == "5":
+            print("You got 5 coins! ")
+    elif Curr_roll == "Gems":
+        if Num_roll == "1":
+            print("You got 1 gem! ")
+        elif  Num_roll == "2":
+            print("You got 2 gems! ")
+        elif  Num_roll == "3":
+            print("You got 3 gems! ")
+        elif  Num_roll == "4":
+            print("You got 4 gems! ")
+        elif  Num_roll == "5":
+            print("You got 5 gems! ")
+    elif Curr_roll == "Dark Dollars":
+        if Num_roll == "1":
+            print("You got 1 Dark Dollar! ")
+        elif  Num_roll == "2":
+            print("You got 2 Dark Dollars! ")
+        elif  Num_roll == "3":
+            print("You got 3 Dark Dollars! ")
+        elif  Num_roll == "4":
+            print("You got 4 Dark Dollars! ")
+        elif  Num_roll == "5":
+            print("You got 5 Dark Dollars! ")
+    elif Curr_roll == "Tokens":
+        if Num_roll == "1":
+            print("You got 1 Token! ")
+        elif  Num_roll == "2":
+            print("You got 2 Tokens! ")
+        elif  Num_roll == "3":
+            print("You got 3 Tokens! ")
+        elif  Num_roll == "4":
+            print("You got 4 Tokens! ")
+        elif  Num_roll == "5":
+            print("You got 5 Tokens! ")
