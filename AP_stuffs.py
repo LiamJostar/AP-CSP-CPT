@@ -52,114 +52,123 @@ Arm_roll = random.choice(Loot_armor)
 Num_roll = random.choice(Curr_amt)
 Start = input("Welcome. Are you prepared to enter? ").lower
 
+if Start == "y" or "yes":
+     print("You go into the Dungeon...\n")
+     time.sleep(1)
+     print("\nDungeon Loot RNG\nIt's time to roll")
+Roll = input("Would you like to roll? ")
+
+if Roll == "y" or "yes":
+     if Loot_roll == "Primary Weapon":
+             if Pri_roll == "Sword" and Rarity_roll == "Rare":
+                 print("You Got: ", random.choice(Rare_Sword))
+             elif Pri_roll  == "Bow" and Rarity_roll == "Rare":
+                 print("You got: ", random.choice(Rare_Bow))
+             elif Pri_roll  == "Axe" and Rarity_roll == "Rare":
+                 print("You got: ", random.choice(Rare_Axe))
+             elif Pri_roll  == "Sythe" and Rarity_roll == "Rare":
+                 print("You got: ", random.choice(Rare_Sythe))
+             elif Pri_roll == "Sword" and Rarity_roll == "Super rare":
+                 print("You Got: ", random.choice(SupRare_Sword))
+             elif Pri_roll  == "Bow" and Rarity_roll == "Super rare":
+                 print("You got: ", random.choice(SupRare_Bow))
+             elif Pri_roll  == "Axe" and Rarity_roll == "Super rare":
+                 print("You got: ", random.choice(SupRare_Axe))
+             elif Pri_roll  == "Sythe" and Rarity_roll == "Super rare":
+                 print("You got: ", random.choice(SupRare_Sythe))
+             elif Pri_roll == "Sword" and Rarity_roll == "Mythic":
+                 print("Congratulations! You got: ", random.choice(Mythic_Sword))
+             elif Pri_roll  == "Bow" and Rarity_roll == "Mythic":
+                 print("Congratulations! You got: ", random.choice(Mythic_Bow))
+             elif Pri_roll  == "Axe" and Rarity_roll == "Mythic":
+                 print("Congratulations! You got: ", random.choice(Mythic_Axe))
+             elif Pri_roll  == "Sythe" and Rarity_roll == "Mythic":
+                 print("Congratulations! You got: ", random.choice(Mythic_Sythe))
+             print(Roll)
+     elif Loot_roll == "Currency":
+             if Curr_roll == "Coins":
+                 if Num_roll == "1":
+                     print("You got 1 coin! ")
+                 elif  Num_roll == "2":
+                     print("You got 2 coins! ")
+                 elif  Num_roll == "3":
+                     print("You got 3 coins! ")
+                 elif  Num_roll == "4":
+                     print("You got 4 coins! ")
+                 elif  Num_roll == "5":
+                     print("You got 5 coins! ")
+             elif Curr_roll == "Gems":
+                 if Num_roll == "1":
+                     print("You got 1 gem! ")
+                 elif  Num_roll == "2":
+                     print("You got 2 gems! ")
+                 elif  Num_roll == "3":
+                     print("You got 3 gems! ")
+                 elif  Num_roll == "4":
+                     print("You got 4 gems! ")
+                 elif  Num_roll == "5":
+                     print("You got 5 gems! ")
+             elif Curr_roll == "Dark Dollars":
+                 if Num_roll == "1":
+                     print("You got 1 Dark Dollar! ")
+                 elif  Num_roll == "2":
+                     print("You got 2 Dark Dollars! ")
+                 elif  Num_roll == "3":
+                     print("You got 3 Dark Dollars! ")
+                 elif  Num_roll == "4":
+                     print("You got 4 Dark Dollars! ")
+                 elif  Num_roll == "5":
+                     print("You got 5 Dark Dollars! ")
+             elif Curr_roll == "Tokens":
+                 if Num_roll == "1":
+                     print("You got 1 Token! ")
+                 elif  Num_roll == "2":
+                     print("You got 2 Tokens! ")
+                 elif  Num_roll == "3":
+                     print("You got 3 Tokens! ")
+                 elif  Num_roll == "4":
+                     print("You got 4 Tokens! ")
+                 elif  Num_roll == "5":
+                     print("You got 5 Tokens! ")
+             print(Roll)
+     elif Loot_roll == "Armor":
+         if Arm_roll == "Helm" and Rarity_roll == "Rare":
+             print("You got: ", random.choice(Rare_helm)) 
+         elif Arm_roll == "Helm" and Rarity_roll == "Super Rare":
+             print("You got: ", random.choice(SupRare_helm))
+         elif Arm_roll == "Helm" and Rarity_roll == "Mythic":
+             print("You got: ", random.choice(Mythic_helm))
+         elif Arm_roll == "Chestpiece" and Rarity_roll == "Rare":
+             print("You got: ", random.choice(Rare_Chestpiece))
+         elif Arm_roll == "Chestpiece" and Rarity_roll == "Super Rare":
+             print("You got: ", random.choice(SupRare_Chestpiece))
+         elif Arm_roll == "Chestpiece" and Rarity_roll == "Mythic":
+             print("You got: ", random.choice(Mythic_Chestpiece))
+         elif Arm_roll == "Greaves" and Rarity_roll == "Rare":
+             print("You got: ", random.choice(Rare_Greaves))
+         elif Arm_roll == "Greaves" and Rarity_roll == "Super Rare":
+             print("You got: ", random.choice(SupRare_Greaves))
+         elif Arm_roll == "Greaves" and Rarity_roll == "Mythic":
+             print("You got: ", random.choice(Mythic_Greaves))
+         print(Roll)
+     elif Loot_roll == "Secondary Weapon":
+             if Sec_roll == "Shield":
+                 if Rarity_roll == "Rare":
+                     print("You got: ", random.choice(Rare_Shield))
+                 elif Rarity_roll == "Super Rare":
+                     print("You got: ", random.choice(SupRare_Shield))
+                 elif Rarity_roll == "Mythic":
+                     print("Congratulations! You got: ", random.choice(Mythic_Shield))
+             elif Sec_roll == "Dagger":
+                 if Rarity_roll == "Rare":
+                     print("You got: ", random.choice(Rare_Dagger))
+                 elif Rarity_roll == "Super Rare":
+                     print("You got: ", random.choice(SupRare_Dagger))
+                 elif Rarity_roll == "Mythic":
+                     print("Congratulations! You got: ", random.choice(Mythic_Dagger))
+             print(Roll)
+else:
+    print("Come back later")
 
 
 
-
-
-
-
-if Loot_roll == "Primary Weapon":
- if Pri_roll == "Sword" and Rarity_roll == "Rare":
-    print("You Got: ", random.choice(Rare_Sword))
- elif Pri_roll  == "Bow" and Rarity_roll == "Rare":
-     print("You got: ", random.choice(Rare_Bow))
- elif Pri_roll  == "Axe" and Rarity_roll == "Rare":
-        print("You got: ", random.choice(Rare_Axe))
- elif Pri_roll  == "Sythe" and Rarity_roll == "Rare":
-        print("You got: ", random.choice(Rare_Sythe))
- elif Pri_roll == "Sword" and Rarity_roll == "Super rare":
-        print("You Got: ", random.choice(SupRare_Sword))
- elif Pri_roll  == "Bow" and Rarity_roll == "Super rare":
-        print("You got: ", random.choice(SupRare_Bow))
- elif Pri_roll  == "Axe" and Rarity_roll == "Super rare":
-        print("You got: ", random.choice(SupRare_Axe))
- elif Pri_roll  == "Sythe" and Rarity_roll == "Super rare":
-        print("You got: ", random.choice(SupRare_Sythe))
- elif Pri_roll == "Sword" and Rarity_roll == "Mythic":
-        print("Congratulations! You got: ", random.choice(Mythic_Sword))
- elif Pri_roll  == "Bow" and Rarity_roll == "Mythic":
-        print("Congratulations! You got: ", random.choice(Mythic_Bow))
- elif Pri_roll  == "Axe" and Rarity_roll == "Mythic":
-        print("Congratulations! You got: ", random.choice(Mythic_Axe))
- elif Pri_roll  == "Sythe" and Rarity_roll == "Mythic":
-        print("Congratulations! You got: ", random.choice(Mythic_Sythe))
-elif Loot_roll == "Currency":
- if Curr_roll == "Coins":
-        if Num_roll == "1":
-            print("You got 1 coin! ")
-        elif  Num_roll == "2":
-            print("You got 2 coins! ")
-        elif  Num_roll == "3":
-            print("You got 3 coins! ")
-        elif  Num_roll == "4":
-            print("You got 4 coins! ")
-        elif  Num_roll == "5":
-            print("You got 5 coins! ")
- elif Curr_roll == "Gems":
-        if Num_roll == "1":
-            print("You got 1 gem! ")
-        elif  Num_roll == "2":
-            print("You got 2 gems! ")
-        elif  Num_roll == "3":
-            print("You got 3 gems! ")
-        elif  Num_roll == "4":
-            print("You got 4 gems! ")
-        elif  Num_roll == "5":
-            print("You got 5 gems! ")
- elif Curr_roll == "Dark Dollars":
-        if Num_roll == "1":
-            print("You got 1 Dark Dollar! ")
-        elif  Num_roll == "2":
-            print("You got 2 Dark Dollars! ")
-        elif  Num_roll == "3":
-            print("You got 3 Dark Dollars! ")
-        elif  Num_roll == "4":
-            print("You got 4 Dark Dollars! ")
-        elif  Num_roll == "5":
-            print("You got 5 Dark Dollars! ")
- elif Curr_roll == "Tokens":
-        if Num_roll == "1":
-            print("You got 1 Token! ")
-        elif  Num_roll == "2":
-            print("You got 2 Tokens! ")
-        elif  Num_roll == "3":
-            print("You got 3 Tokens! ")
-        elif  Num_roll == "4":
-            print("You got 4 Tokens! ")
-        elif  Num_roll == "5":
-            print("You got 5 Tokens! ")
-elif Loot_roll == "Armor":
-    if Arm_roll == "Helm" and Rarity_roll == "Rare":
-        print("You got: ", random.choice(Rare_helm)) 
-    elif Arm_roll == "Helm" and Rarity_roll == "Super Rare":
-        print("You got: ", random.choice(SupRare_helm))
-    elif Arm_roll == "Helm" and Rarity_roll == "Mythic":
-        print("You got: ", random.choice(Mythic_helm))
-    elif Arm_roll == "Chestpiece" and Rarity_roll == "Rare":
-        print("You got: ", random.choice(Rare_Chestpiece))
-    elif Arm_roll == "Chestpiece" and Rarity_roll == "Super Rare":
-        print("You got: ", random.choice(SupRare_Chestpiece))
-    elif Arm_roll == "Chestpiece" and Rarity_roll == "Mythic":
-        print("You got: ", random.choice(Mythic_Chestpiece))
-    elif Arm_roll == "Greaves" and Rarity_roll == "Rare":
-        print("You got: ", random.choice(Rare_Greaves))
-    elif Arm_roll == "Greaves" and Rarity_roll == "Super Rare":
-        print("You got: ", random.choice(SupRare_Greaves))
-    elif Arm_roll == "Greaves" and Rarity_roll == "Mythic":
-        print("You got: ", random.choice(Mythic_Greaves))
-elif Loot_roll == "Secondary Weapon":
-     if Sec_roll == "Shield":
-          if Rarity_roll == "Rare":
-               print("You got: ", random.choice(Rare_Shield))
-          elif Rarity_roll == "Super Rare":
-               print("You got: ", random.choice(SupRare_Shield))
-          elif Rarity_roll == "Mythic":
-               print("Congratulations! You got: ", random.choice(Mythic_Shield))
-     elif Sec_roll == "Dagger":
-          if Rarity_roll == "Rare":
-               print("You got: ", random.choice(Rare_Dagger))
-          elif Rarity_roll == "Super Rare":
-               print("You got: ", random.choice(SupRare_Dagger))
-          elif Rarity_roll == "Mythic":
-               print("Congratulations! You got: ", random.choice(Mythic_Dagger))
