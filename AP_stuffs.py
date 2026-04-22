@@ -42,132 +42,98 @@ mythic_Dart = ["Plagued Dart", "God's Blight", "Nightmare Dart", "Goblin Dart"]
 rare_Chakram = ["Wood Chakram", "Bronze Chakram", "Light Chakram", "Heavy Chakram"]
 supRare_Chakram = ["Flame Chakram", "Freeze Chakram", "Dual Chakrams", "Shockram"]
 mythic_Chakram = ["God's will", "Nightmare Chakram", "Hellfire Chakram", "15000 volt Shockram"]
-rarity = ["Rare"]*60 + ["Super Rare"]*30 + ["Mythic"]*10
+rarity_pool = ["Rare"]*60 + ["Super Rare"]*30 + ["Mythic"]*10
 pri_roll = random.choice(loot_pri)
 sec_roll = random.choice(loot_sec)
-rarity_roll = random.choice(rarity)
+rarity_roll = random.choice(rarity_pool)
 loot_roll = random.choice(loot_type)
 curr_roll = random.choice(loot_curr)
 arm_roll = random.choice(loot_armor)
 num_roll = random.choice(curr_amt)
-start = input("Welcome. Are you prepared to enter? ").lower()
+def roll_for_loot():
+    loot_category = random.choice(loot_type)
+    rarity_roll = random.choice(rarity_pool)
+    item = "Nothing Found"
 
-#def game(player name):
+    if loot_category == "Currency":
+        num = random.choice(curr_amt)
+        curr = random.choice(loot_curr)
+        return f"You got {num} {curr}!"
 
-#get player name input 
-#run= game("Jojo")
-
-if start == "y" or start == "yes":
-     print("You go into the Dungeon...\n")
-     time.sleep(1)
-     print("\nDungeon Loot RNG\nIt's time to roll")
-else:
-   print("you suck")
-roll = input("Would you like to roll? ").lower()
-while roll in ["y", "yes"]:
-    loot_roll = random.choice(loot_type)
-    pri_roll = random.choice(loot_pri)
-    rarity_roll = random.choice(rarity)
-    sec_roll = random.choice(loot_sec)
-    curr_roll = random.choice(loot_curr)
-    num_roll = random.choice(curr_amt)
-    arm_roll = random.choice(loot_armor)
-    if loot_roll == "Primary Weapon":
-     
-     if rarity_roll == "Rare":
-        if pri_roll == "Sword":
-            item = random.choice(rare_Sword)
-        elif pri_roll == "Bow":
-            item = random.choice(rare_Bow)
-        elif pri_roll == "Axe":
-            item = random.choice(rare_Axe)
-        elif pri_roll == "Sythe":
-            item = random.choice(rare_Sythe)
-
-     elif rarity_roll == "Super Rare":
-        if pri_roll == "Sword":
-            item = random.choice(supRare_Sword)
-        elif pri_roll == "Bow":
-            item = random.choice(supRare_Bow)
-        elif pri_roll == "Axe":
-            item = random.choice(supRare_Axe)
-        elif pri_roll == "Sythe":
-            item = random.choice(supRare_Sythe)
-
-     elif rarity_roll == "pythic":
-        if pri_roll == "Sword":
-            item = random.choice(mythic_Sword)
-        elif pri_roll == "Bow":
-            item = random.choice(mythic_Bow)
-        elif pri_roll == "Axe":
-            item = random.choice(mythic_Axe)
-        elif pri_roll == "Sythe":
-            item = random.choice(mythic_Sythe)
-
-     print(f"You got a {rarity_roll} {item}")
-    elif loot_roll == "Secondary Weapon":
-         if rarity_roll == "Rare":
-            if sec_roll == "Shield":
-                item = random.choice(rare_Shield)
-            elif sec_roll == "Dagger":
-               item = random.choice(rare_Dagger)
-            elif sec_roll == "Dart":
-             item = random.choice(rare_Dart)
-            elif sec_roll == "Chakram":
-              item = random.choice(rare_Chakram)
-
-         elif rarity_roll == "Super Rare":
-            if sec_roll == "Shield":
-             item = random.choice(supRare_Shield)
-            elif sec_roll == "Dagger":
-             item = random.choice(supRare_Dagger)
-            elif sec_roll == "Dart":
-             item = random.choice(supRare_Dart)
-            elif sec_roll == "Chakram":
-             item = random.choice(supRare_Chakram)
-
-         elif rarity_roll == "Mythic":
-             if sec_roll == "Shield":
-              item = random.choice(mythic_Shield)
-             elif sec_roll == "Dagger":
-                 item = random.choice(mythic_Dagger)
-             elif sec_roll == "Dart":
-                  item = random.choice(mythic_Dart)
-             elif sec_roll == "Chakram":
-                 item = random.choice(mythic_Chakram)
-         print(f"You got a {rarity_roll} {item}")
-    elif loot_roll == "Currency":
-     print(f"You got {num_roll} {curr_roll}")
-    elif loot_roll == "Armor":
+    elif loot_category == "Primary Weapon":
+        pri = random.choice(loot_pri)
         if rarity_roll == "Rare":
-            if arm_roll == "Helm":
-                item = random.choice(rare_helm)
-            elif arm_roll == "Chestpiece":
-             item = random.choice(rare_Chestpiece)
-            elif arm_roll == "Greaves":
-             item = random.choice(rare_Greaves)
-            elif arm_roll == "Boots":
-             item = random.choice(rare_Boots)
-
+            if pri == "Sword": item = random.choice(rare_Sword)
+            elif pri == "Bow": item = random.choice(rare_Bow)
+            elif pri == "Axe": item = random.choice(rare_Axe)
+            elif pri == "Sythe": item = random.choice(rare_Sythe)
         elif rarity_roll == "Super Rare":
-            if arm_roll == "Helm":
-                item = random.choice(supRare_helm)
-            elif arm_roll == "Chestpiece":
-                item = random.choice(supRare_Chestpiece)
-            elif arm_roll == "Greaves":
-                item = random.choice(supRare_Greaves)
-            elif arm_roll == "Boots":
-                item = random.choice(supRare_Boots)
-
+            if pri == "Sword": item = random.choice(supRare_Sword)
+            elif pri == "Bow": item = random.choice(supRare_Bow)
+            elif pri == "Axe": item = random.choice(supRare_Axe)
+            elif pri == "Sythe": item = random.choice(supRare_Sythe)
         elif rarity_roll == "Mythic":
-            if arm_roll == "Helm":
-             item = random.choice(mythic_helm)
-            elif arm_roll == "Chestpiece":
-             item = random.choice(mythic_Chestpiece)
-            elif arm_roll == "Greaves":
-             item = random.choice(mythic_Greaves)
-            elif arm_roll == "Boots":
-             item = random.choice(mythic_Boots)
-        print(f"You got a {rarity_roll} {item}")
-    Roll = input("\nRoll again? ").lower()
+            if pri == "Sword": item = random.choice(mythic_Sword)
+            elif pri == "Bow": item = random.choice(mythic_Bow)
+            elif pri == "Axe": item = random.choice(mythic_Axe)
+            elif pri == "Sythe": item = random.choice(mythic_Sythe)
 
+    elif loot_category == "Secondary Weapon":
+        sec = random.choice(loot_sec)
+        if rarity_roll == "Rare":
+            if sec == "Shield": item = random.choice(rare_Shield)
+            elif sec == "Dagger": item = random.choice(rare_Dagger)
+            elif sec == "Dart": item = random.choice(rare_Dart)
+            elif sec == "Chakram": item = random.choice(rare_Chakram)
+        elif rarity_roll == "Super Rare":
+            if sec == "Shield": item = random.choice(supRare_Shield)
+            elif sec == "Dagger": item = random.choice(supRare_Dagger)
+            elif sec == "Dart": item = random.choice(supRare_Dart)
+            elif sec == "Chakram": item = random.choice(supRare_Chakram)
+        elif rarity_roll == "Mythic":
+            if sec == "Shield": item = random.choice(mythic_Shield)
+            elif sec == "Dagger": item = random.choice(mythic_Dagger)
+            elif sec == "Dart": item = random.choice(mythic_Dart)
+            elif sec == "Chakram": item = random.choice(mythic_Chakram)
+
+    elif loot_category == "Armor":
+        arm = random.choice(loot_armor)
+        if rarity_roll == "Rare":
+            if arm == "Helm": item = random.choice(rare_helm)
+            elif arm == "Chestpiece": item = random.choice(rare_Chestpiece)
+            elif arm == "Greaves": item = random.choice(rare_Greaves)
+            elif arm == "Boots": item = random.choice(rare_Boots)
+        elif rarity_roll == "Super Rare":
+            if arm == "Helm": item = random.choice(supRare_helm)
+            elif arm == "Chestpiece": item = random.choice(supRare_Chestpiece)
+            elif arm == "Greaves": item = random.choice(supRare_Greaves)
+            elif arm == "Boots": item = random.choice(supRare_Boots)
+        elif rarity_roll == "Mythic":
+            if arm == "Helm": item = random.choice(mythic_helm)
+            elif arm == "Chestpiece": item = random.choice(mythic_Chestpiece)
+            elif arm == "Greaves": item = random.choice(mythic_Greaves)
+            elif arm == "Boots": item = random.choice(mythic_Boots)
+
+    return f"You got a {rarity_roll} {item}!"
+
+start = input("Welcome. Are you prepared to enter? (y/n) ").lower()
+
+if start in ["y", "yes"]:
+    print("You go into the Dungeon...\n")
+    time.sleep(1)
+    print("Dungeon Loot RNG")
+    print("It's time to roll!")
+    
+    roll = input("\nWould you like to roll? (y/n) ").lower()
+    while roll in ["y", "yes"]:
+        result = roll_for_loot()
+        print("-" * 20)
+        print(result)
+        print("-" * 20)
+        
+        roll = input("Roll again? (y/n) ").lower()
+    
+    print("Thanks for playing!")
+
+
+roll_for_loot()
